@@ -1,6 +1,6 @@
 import os
 
-os.environ['GOOGLE_API_KEY'] = 'AIzaSyB8wxMzakJWH2uEnOho18D4Z4xqWEqyD68'
+os.environ['GOOGLE_API_KEY'] = '' #Add your Gemini API Key Here
 from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain.prompts import (
     PromptTemplate,
@@ -101,7 +101,6 @@ GENERATE YOUR FIRST RESPONSE BELOW AND THEN WAIT FOR ME TO RESPOND
 Finally, don’t end the call until all of their concerns are handled.
             """
         ),
-        # The `variable_name` here is what must align with memory
         MessagesPlaceholder(variable_name="chat_history"),
         HumanMessagePromptTemplate.from_template("{question}")
     ]
@@ -109,8 +108,7 @@ Finally, don’t end the call until all of their concerns are handled.
 
 
 
-# Notice that we `return_messages=True` to fit into the MessagesPlaceholder
-# Notice that `"chat_history"` aligns with the MessagesPlaceholder name.
+
 memory = ConversationBufferMemory(memory_key="chat_history", return_messages=True)
 conversation = LLMChain(
     llm=llm,

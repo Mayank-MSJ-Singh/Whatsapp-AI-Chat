@@ -64,7 +64,8 @@ Then start the chatbot:
    python main.py
    ```
 
-Now Chat!
+### Now Chat!
+
 ![Whatsapp Live Chat 1](images/Whatsapp_2.png)
 
 ![Whatsapp Live Chat 2](images/Whatsapp_3.png)
